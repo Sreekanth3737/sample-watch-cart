@@ -1,0 +1,151 @@
+<section>
+	<div class="container">
+<div class="row mt-5">
+           
+
+{{#each address}}
+{{#each this.userAddress}}
+
+		  <div class="col-md-3 p-3 d-flex justify-content-center">
+               <div class="card" style="width: 18rem;">
+				<h3 class="card-title text-center mt-4">Delivery Address</h3>
+				<hr>
+				{{!-- <form action="/place-order" method="post"> --}}
+                    <div class="card-body">
+                        <h6 class="card-title">{{this.name}}</h6>
+                        <h6 class="card-title">{{this.address}}</h6>
+                        
+                        <h6 class="card-title">{{this.city}}</h6>
+				    <h6 class="card-title">{{this.mobile}}</h6>
+                        
+                        <h6 class="card-text">{{this.pincode}}</h6>
+				    <h6 class="card-title">{{this.state}}</h6>
+				    <hr>
+                      <a href="/place-order/{{this._id}}">  <button type="submit"  class="btn btn-dark">Select Address</button></a>
+                     </div>
+				 {{!-- </form> --}}
+                </div>
+           </div>
+            {{/each}}
+		  {{/each}}
+
+
+            
+     </div>
+	
+	<form id="user-address">
+		<div class="row">
+			<div class="col-md-8 mb-4 mt-5 ">
+				<div class="card mb-4">
+					<div class="card-header py-3">
+						<h5 class="mb-0">Biling details</h5>
+					</div>
+					<div class="card-body ">
+
+						<div class="form-outline mb-4">
+							<input type="text" name="name" id="form7Example4" class="form-control" required />
+							<label class="form-label" for="form7Example4">Name</label>
+						</div>
+
+						<div class="form-outline mb-4">
+							<input type="text" name="address" id="form7Example4" class="form-control" required />
+							<label class="form-label" for="form7Example4">Address</label>
+						</div>
+
+						<div class="form-outline mb-4">
+							<input type="text" name="city" id="form7Example4" class="form-control" required />
+							<label class="form-label" for="form7Example4">City</label>
+						</div>
+
+						<div class="form-outline mb-4">
+							<input type="text" name="state" id="form7Example4" class="form-control" required />
+							<label class="form-label" for="form7Example4">State</label>
+						</div>
+
+
+
+
+						<div class="form-outline mb-4">
+							<input type="text" name="pincode" id="form7Example4" class="form-control" required />
+							<label class="form-label" for="form7Example4">Pincode</label>
+						</div>
+
+
+
+						<!-- Number input -->
+						<div class="form-outline mb-4">
+							<input type="text" name="mobile" id="form7Example6" class="form-control" required />
+							<label class="form-label" for="form7Example6">Mobile</label>
+							<input type="text" name="userid" value="{{user._id}}" hidden>
+						</div>
+
+
+						<button style="float:right ;" type="submit" class="btn btn-dark btn-lg btn-block">
+							Add Address
+						</button>
+						
+	</form> 
+	</div>
+	</div>
+	</div>
+
+	<div class="col-md-4 mb-4 mt-5 px-5">
+		<div class="card mb-4">
+			<div class="card-header py-3">
+				<h5 class="mb-0">Your Total &nbsp; &nbsp; &#x20b9 {{total.grandTotal.total}}.00</h5>
+			</div>
+			<div class="card-body">
+				<ul class="list-group list-group-flush">
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+						Watch Price
+						<span>&#x20b9 {{total.grandTotal.totals}}</span>
+					</li>
+					<br><br>
+					<li class="list-group-item d-flex justify-content-between align-items-center px-0">
+						Shipping
+						<span>&#x20b9 {{total.grandTotal.ship}}</span>
+					</li>
+					<br>
+
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+						<div>
+							<strong>Total amount</strong>
+							{{!-- <strong>
+								<p class="mb-0">(including VAT)</p>
+							</strong> --}}
+						</div>
+
+
+						<span id="total"><strong>&#x20b9 {{total.grandTotal.total}}.00</strong> </span>
+
+
+					</li>
+				</ul>
+
+
+			</div>
+		</div>
+	</div>
+
+	{{!-- </form> --}}
+	</div>
+	</div>
+</section>
+
+<script>
+	$("#user-address").submit((e) => {
+		e.preventDefault()
+		$.ajax({
+			url:'/user-address',
+			method:'post',
+			data:$('#user-address').serialize(),
+			success:(response) => {
+				alert(response)
+				location.reload()
+			}
+
+		})
+	})
+</script>

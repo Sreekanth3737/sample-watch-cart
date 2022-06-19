@@ -1,0 +1,200 @@
+<section>
+    <div class="container">
+
+       
+		<div class="row">
+			<div class="col-md-8 mb-4 mt-5 ">
+				<div class="card mb-4">
+					<div class="card-header py-3">
+						<h5 class="mb-0">Biling details</h5>
+					</div>
+                    
+					<div class="card-body ">
+						<form id="checkout-form">
+						<div class="form-outline mb-4">
+                        <label class="form-label" for="form7Example4">Name</label>
+
+							<input type="text" name="name" value="{{address.userAddress.name}}" id="form7Example4" class="form-control" required />
+						</div>
+
+						<div class="form-outline mb-4">
+                            <label class="form-label" for="form7Example4">Address</label>
+
+							<input type="text" name="address" value="{{address.userAddress.address}}" id="form7Example4" class="form-control" required />
+						</div>
+
+						<div class="form-outline mb-4">
+                            <label class="form-label" for="form7Example4">City</label>
+
+							<input type="text" name="city" value="{{address.userAddress.city}}" id="form7Example4" class="form-control" required />
+						</div>
+
+						<div class="form-outline mb-4">
+                            <label class="form-label"  for="form7Example4">State</label>
+
+							<input type="text" name="state" value="{{address.userAddress.state}}" id="form7Example4" class="form-control" required />
+						</div>
+
+
+
+
+						<div class="form-outline mb-4">
+							<label class="form-label" for="form7Example4">Pincode</label>
+
+							<input type="text" name="pincode" value="{{address.userAddress.pincode}}" id="form7Example4" class="form-control" required />
+						</div>
+
+
+
+						<!-- Number input -->
+						<div class="form-outline mb-4">
+                            <label class="form-label"  for="form7Example6">Mobile</label>
+
+							<input type="text" name="mobile" value="{{address.userAddress.mobile}}" id="form7Example6" class="form-control" required />
+							<input type="text" name="userId" value="{{user._id}}" hidden>
+						</div>
+
+
+						{{!-- <button style="float:right ;" type="submit" class="btn btn-dark btn-lg btn-block">
+							Add Address
+						</button> --}}
+						{{!--
+	    </form> --}}
+        
+	</div>
+	</div>
+	</div>
+
+	<div class="col-md-4 mb-4 mt-5 px-5">
+		<div class="card mb-4">
+			<div class="card-header py-3">
+
+				<h5 class="mb-0">Your Total &nbsp; &nbsp; &#x20b9 {{total.grandTotal.total}}.00</h5>
+				<h4>Payment Method</h4>
+			</div>
+			<div class="card-body">
+				<ul class="list-group list-group-flush">
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+						Watch Price
+						<span>&#x20b9 {{total.grandTotal.totals}}</span>
+					</li><br>
+                   <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+						Shipping
+						<span>&#x20b9 {{total.grandTotal.ship}}</span>
+					</li> <br>
+                    <div class="form-check">
+                                <input class="form-check-input" type="radio" value="COD" name="payment-method"
+                                    id="flexRadioDefault2" checked/>
+                                <label class="form-check-label" for="flexRadioDefault1">Cash On Delivery</label>
+                            </div>
+					<br>
+					
+                    <div class="form-check">
+                                <input class="form-check-input" type="radio" value="ONLINE" name="payment-method"
+                                    id="flexRadioDefault2" />
+                                <label class="form-check-label" for="flexRadioDefault1">Online Payment</label>
+                            </div>
+					<br><br><hr>
+
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+						<div>
+							<strong>Total amount</strong>
+							{{!-- <strong>
+								<p class="mb-0">(including VAT)</p>
+							</strong> --}}
+						</div>
+
+
+						<span id="total"><strong>&#x20b9 {{total.grandTotal.total}}.00</strong> </span> 
+                    
+
+					</li>
+				</ul>
+
+                    <button style="float:right ;" type="submit" class="btn btn-dark btn-lg btn-block">
+							Make Purchase
+						</button>
+			</div>
+		</div>
+	</div>
+
+	</form> 
+    </div>
+</section>
+
+
+<script>
+	$("#checkout-form").submit((e) => {
+		e.preventDefault()
+		$.ajax({
+			
+			url: "/place-order",
+			method: "post",
+			data: $('#checkout-form').serialize(),
+			success: (response) => {
+				alert("address Added")
+				if(response.codSuccess){
+					location.href='/order-success'
+				}else{
+					razorpayPayment(response)
+				}
+			}
+
+		})
+	})
+
+	function razorpayPayment(order){
+		console.log(order,"+++++++++")
+		var options = {
+    "key": "rzp_test_bAry8hlQGMmmX4", // Enter the Key ID generated from the Dashboard
+    "amount":order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Watch Cart",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id":order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+		console.log(response,"--")
+       
+		verifyPayment(response,order)
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#44080E"
+    }
+};
+
+	var rzp1 = new Razorpay(options);
+	rzp1.open();
+
+	}
+
+	function verifyPayment(payment,order){
+		console.log(payment,order)
+		$.ajax({
+			url:'/verify-payment',
+			data:{
+				payment,
+				order
+			},
+			method:'post',
+			success:(response)=>{
+				if(response.status){
+				location.href='/order-success'
+
+				}else{
+					alert("payment failed")
+				}
+			}
+		})
+	}
+</script>

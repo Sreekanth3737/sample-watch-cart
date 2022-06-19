@@ -1,0 +1,85 @@
+
+<section class="vh-100 mt-5 mb-5" style="background-color:rgb(230, 232, 242);">
+  <div class="container py-5 h-50">
+    <div class="row d-flex justify-content-center  align-items-center h-50">
+      <div class="col col-xl-8">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://www.tissotwatches.com/media/home/Categorie_276x663_5a.jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%"  />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center ">
+              <div class="card-body p-3 p-lg-5 text-black ">
+
+                <form id="signup-form" action="/signup" method="post">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    {{!-- <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i> --}}
+                    <span class="h1 fw-bold mb-0">Watch Cart</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                    <div class="form-outline mb-3">
+                    <input type="text" name="name" id="form2Example17" placeholder="Full Name" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example17">Full Name</label> --}}
+                  </div>
+                  {{!-- <div class="form-outline mb-3">
+                    <input type="text" name="lastname" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Last Name</label>
+                  </div> --}}
+                  <div class="form-outline mb-3">
+                    <input type="text" name="mobile" id="form2Example17" placeholder="Mobile" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example17">Mobile</label> --}}
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <input type="email" name="email" id="form2Example17" placeholder="Email Address" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example17">Email address</label> --}}
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <input type="password" name="password" id="form2Example27" placeholder="Password" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example27">Password</label> --}}
+                  </div>
+                  <div class="form-outline mb-3">
+                    <input type="text" name="address" id="form2Example17" placeholder="Enter your Address" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example17">Address</label> --}}
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <input type="text" name="city" id="form2Example17" placeholder="Enter your City" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example17">City</label> --}}
+                  </div>
+
+                  <div class="form-outline mb-3"> 
+                    <input type="text" name="pincode" id="form2Example17" placeholder="Enter your Pincode" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example17">Pincode</label> --}}
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <input type="text" name="state" placeholder="Enter your State" id="form2Example17" class="form-control form-control-lg" required/>
+                    {{!-- <label class="form-label" for="form2Example17">State</label> --}}
+                  </div>
+
+                  <div class="pt-1 mb-3">
+                    {{!-- <button class="btn btn-dark btn-lg btn-block" type="button">Signup</button> --}}
+                                        <input class="btn btn-warning btn-block btn-lg gradient-custom-4 text-body" type="submit" value="Signup" >
+
+                  </div>
+
+                 
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Alredy have an account? <a href="/login"
+                      style="color: #393f81;">Login here</a></p>
+                  
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

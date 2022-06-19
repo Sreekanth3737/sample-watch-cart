@@ -1,0 +1,359 @@
+
+<section id="services" class="services section-bg">
+   <div class="container mt-5">
+   
+      <div class="row row-sm">
+         <div class="col-md-6 _boxzoom">
+        
+            <div class="zoom-thumb">
+               <ul class="piclist">
+                  <li><img src="/images/{{productDetails.allImages.[0]}}" alt=""></li>
+                  <li><img src="/images/{{productDetails.allImages.[1]}}" alt=""></li>
+                  <li><img src="/images/{{productDetails.allImages.[0]}}" alt=""></li>
+                  <li><img src="/images/{{productDetails.allImages.[1]}}" alt=""></li>
+               </ul>
+            </div>
+            
+            <div class="_product-images">
+               <div class="picZoomer">
+                  <img class="my_img" src="/images/{{productDetails.allImages.[1]}}" alt="">
+               </div>
+            </div>
+         </div>
+         
+         <div class="col-md-6">
+            <div class="_product-detail-content">
+               <p class="_p-name"> {{productDetails.brandnames.brand}} </p>
+               <div class="_p-price-box">
+                  <div class="p-list">
+                     <span> M.R.P. : <i class="fa fa-inr"></i> <del> 200000  </del>   </span>
+                     <span class="price">{{productDetails.price}}</span>
+                  </div>
+                  <div class="_p-add-cart">
+                     
+                  </div>
+                  <div class="_p-features">
+                     <span> Description About this product:- </span>
+                     Solid color polyester/linen full blackout thick sunscreen floor curtain
+                     Type: General Pleat
+                     Applicable Window Type: Flat Window
+                     Format: Rope
+                     Opening and Closing Method: Left and Right Biparting Open
+                     Processing Accessories Cost: Included
+                     Installation Type: Built-in
+                     Function: High Shading(70%-90%)
+                     Material: Polyester / Cotton
+                     Style: Classic
+                     Pattern: Embroidered
+                     Location: Window
+                     Technics: Woven
+                     Use: Home, Hotel, Hospital, Cafe, Office
+                     Feature: Blackout, Insulated, Flame Retardant
+                     Place of Origin: India
+                     Name: Curtain
+                     Usage: Window Decoration
+                     Keywords: Ready Made Blackout Curtain                        
+                  </div>
+                 
+                     <ul class="spe_ul"></ul>
+                     <div class="_p-qty-and-cart">
+                        <div class="_p-add-cart">
+                           
+                           {{!-- <button class="btn-theme btn btn-success" tabindex="0"> --}}
+                           {{!-- <i class="fa fa-shopping-cart"></i> Add to Cart --}}
+                           <button onclick="addToCart('{{this._id}}')" class="btn btn-warning">Add to Cart</button>
+                        <button onclick="addToWishlist('{{this._id}}')" class="btn btn-warning">Whishlist <i class="fa-solid fa-heart"></i></button>
+                           {{!-- </button> --}}
+                           <input type="hidden" name="pid" value="18" />
+                           <input type="hidden" name="price" value="850" />
+                           <input type="hidden" name="url" value="" />    
+                        </div>
+                     </div>
+                 
+               </div>
+            </div>
+         </div>
+      
+      </div>
+   </div>
+</section>
+
+{{!-- <section class="sec bg-light">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12 title_bx">
+            <h3 class="title"> Recent Post   </h3>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 list-slider mt-4">
+            <div class="owl-carousel common_wd  owl-theme" id="recent_post">
+               <div class="item">
+                  <div class="sq_box shadow">
+                     <div class="pdis_img"> 
+                        <span class="wishlist">
+                        <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                        </span>
+                        <a href="#">
+                        <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                        </a>
+                     </div>
+                     <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                     <div class="price-box mb-2">
+                        <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                        <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                     </div>
+                     <div class="btn-box text-center">
+                        <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="sq_box shadow">
+                     <div class="pdis_img"> 
+                        <span class="wishlist">
+                        <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                        </span>
+                        <a href="#">
+                        <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                        </a>
+                     </div>
+                     <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                     <div class="price-box mb-2">
+                        <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                        <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                     </div>
+                     <div class="btn-box text-center">
+                        <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="sq_box shadow">
+                     <div class="pdis_img"> 
+                        <span class="wishlist">
+                        <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                        </span>
+                        <a href="#">
+                        <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                        </a>
+                     </div>
+                     <h4 class="mb-1"> <a href="#"> Milton Bottle </a> </h4>
+                     <div class="price-box mb-2">
+                        <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                        <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                     </div>
+                     <div class="btn-box text-center">
+                        <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="sq_box shadow">
+                     <div class="pdis_img"> 
+                        <span class="wishlist">
+                        <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                        </span>
+                        <a href="#">
+                        <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                        </a>
+                     </div>
+                     <h4 class="mb-1"> <a href="#"> Milton Bottle </a> </h4>
+                     <div class="price-box mb-2">
+                        <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                        <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                     </div>
+                     <div class="btn-box text-center">
+                        <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="sq_box shadow">
+                     <div class="pdis_img"> 
+                        <span class="wishlist">
+                        <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                        </span>
+                        <a href="#">
+                        <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                        </a>
+                     </div>
+                     <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                     <div class="price-box mb-2">
+                        <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                        <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                     </div>
+                     <div class="btn-box text-center">
+                        <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="sq_box shadow">
+                     <div class="pdis_img"> 
+                        <span class="wishlist">
+                        <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                        </span>
+                        <a href="#">
+                        <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                        </a>
+                     </div>
+                     <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                     <div class="price-box mb-2">
+                        <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                        <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                     </div>
+                     <div class="btn-box text-center">
+                        <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="sq_box shadow">
+                     <div class="pdis_img"> 
+                        <span class="wishlist">
+                        <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i class="fa fa-heart"></i></a>
+                        </span>
+                        <a href="#">
+                        <img src="https://ucarecdn.com/05f649bf-b70b-4cf8-90f7-2588ce404a08/-/resize/680x/"> 
+                        </a>
+                     </div>
+                     <h4 class="mb-1"> <a href="details.php"> Milton Bottle </a> </h4>
+                     <div class="price-box mb-2">
+                        <span class="price"> Price <i class="fa fa-inr"></i> 200 </span>
+                        <span class="offer-price"> Offer Price <i class="fa fa-inr"></i> 120 </span>
+                     </div>
+                     <div class="btn-box text-center">
+                        <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i> Add to Cart </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section> --}}
+
+<script>
+
+    /*!     
+        jquery.picZoomer.js
+        v 1.0
+        David
+        http://www.CodingSerf.com
+*/
+
+//放大镜控件
+;(function($){
+	$.fn.picZoomer = function(options){
+		var opts = $.extend({}, $.fn.picZoomer.defaults, options), 
+			$this = this,
+			$picBD = $('<div class="picZoomer-pic-wp"></div>').css({'width':opts.picWidth+'px', 'height':opts.picHeight+'px'}).appendTo($this),
+			$pic = $this.children('img').addClass('picZoomer-pic').appendTo($picBD),
+			$cursor = $('<div class="picZoomer-cursor"><i class="f-is picZoomCursor-ico"></i></div>').appendTo($picBD),
+			cursorSizeHalf = {w:$cursor.width()/2 ,h:$cursor.height()/2},
+			$zoomWP = $('<div class="picZoomer-zoom-wp"><img src="" alt="" class="picZoomer-zoom-pic"></div>').appendTo($this),
+			$zoomPic = $zoomWP.find('.picZoomer-zoom-pic'),
+			picBDOffset = {x:$picBD.offset().left,y:$picBD.offset().top};
+
+		
+		opts.zoomWidth = opts.zoomWidth||opts.picWidth;
+		opts.zoomHeight = opts.zoomHeight||opts.picHeight;
+		var zoomWPSizeHalf = {w:opts.zoomWidth/2 ,h:opts.zoomHeight/2};
+
+		//初始化zoom容器大小
+		$zoomWP.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
+		$zoomWP.css(opts.zoomerPosition || {top: 0, left: opts.picWidth+30+'px'});
+		//初始化zoom图片大小
+		$zoomPic.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});
+
+		//初始化事件
+		$picBD.on('mouseenter',function(event){
+			$cursor.show();
+			$zoomWP.show();
+			$zoomPic.attr('src',$pic.attr('src'))
+		}).on('mouseleave',function(event){
+			$cursor.hide();
+			$zoomWP.hide();
+		}).on('mousemove', function(event){
+			var x = event.pageX-picBDOffset.x,
+				y = event.pageY-picBDOffset.y;
+
+			$cursor.css({'left':x-cursorSizeHalf.w+'px', 'top':y-cursorSizeHalf.h+'px'});
+			$zoomPic.css({'left':-(x*opts.scale-zoomWPSizeHalf.w)+'px', 'top':-(y*opts.scale-zoomWPSizeHalf.h)+'px'});
+
+		});
+		return $this;
+
+	};
+	$.fn.picZoomer.defaults = {
+        picHeight: 460,
+		scale: 2.5,
+		zoomerPosition: {top: '0', left: '380px'},
+
+		zoomWidth: 400,
+		zoomHeight: 460
+	};
+})(jQuery); 
+
+
+
+$(document).ready(function () {
+     $('.picZoomer').picZoomer();
+    $('.piclist li').on('click', function (event) {
+        var $pic = $(this).find('img');
+        $('.picZoomer-pic').attr('src', $pic.attr('src'));
+    });
+   
+  var owl = $('#recent_post');
+              owl.owlCarousel({
+                margin:20,
+                dots:false,
+                nav: true,
+                navText: [
+                  "<i class='fa fa-chevron-left'></i>",
+                  "<i class='fa fa-chevron-right'></i>"
+                ],
+                autoplay: true,
+                autoplayHoverPause: true,
+                responsive: {
+                  0: {
+                    items: 2
+                  },
+                  600: {
+                    items:3
+                  },
+                  1000: {
+                    items:5
+                  },
+                  1200: {
+                    items:4
+                  }
+                }
+  });    
+  
+        $('.decrease_').click(function () {
+            decreaseValue(this);
+        });
+        $('.increase_').click(function () {
+            increaseValue(this);
+        });
+        function increaseValue(_this) {
+            var value = parseInt($(_this).siblings('input#number').val(), 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            $(_this).siblings('input#number').val(value);
+        }
+
+        function decreaseValue(_this) {
+            var value = parseInt($(_this).siblings('input#number').val(), 10);
+            value = isNaN(value) ? 0 : value;
+            value < 1 ? value = 1 : '';
+            value--;
+            $(_this).siblings('input#number').val(value);
+        }
+    });
+
+</script>
+
+

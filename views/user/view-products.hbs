@@ -1,0 +1,152 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    {{#each bannerImg}}
+    <div class="carousel-item ">
+      <img src="/images/{{this.img}}" class="d-block w-100" alt="">
+      <div class="carousel-caption d-none d-md-block">
+        <p>{{this.description}}.</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+ 
+  
+     <section style="background-color: #eee;">
+
+   <nav  class="navbar navbar-expand-lg navbar-light bg-light mb-3 pt-5 pb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><h1><strong>Watch Cart</strong> </h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+       
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <strong> Categories</strong>
+          </a> --}}
+          
+           
+          
+         
+          {{#each categories}}
+          <li class="nav-item">
+          <a class="nav-link mx-3" href="/product-categories/{{this._id}}"style="color: red;"><h1><strong>{{this.category}}</strong></h1> </a>
+        </li>
+            {{/each}}  
+         
+          
+       
+        {{!-- </li> --}}
+        
+      </ul>
+      <form class="d-flex" action="/search" method="post">
+        <input class="form-control me-2" type="search" name="searchname" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark"  type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+ 
+<nav  class="navbar navbar-expand-lg navbar-dark bg-dark  ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Categories</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#each subcategories}}
+        <li class="nav-item">
+          <a class="nav-link mx-3" href="/product-subcategories/{{this._id}}">{{this.subcategoryName}}</a>
+        </li>
+        
+        {{/each}}
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+{{!--  --}}
+   
+   
+    <div class="text-center container py-5">
+        <h4 class="mt-4 mb-5"><strong>New Collections</strong></h4>
+
+  
+        <div class="row">
+         
+
+            {{#each products}}
+            
+            <div class="col-lg-4 col-md-12 mb-4">
+              
+
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                        data-mdb-ripple-color="light">
+                        <a href="/product-details-page/{{this._id}}"><img src="/images/{{this.allImages.[0]}}" class="card-img-top" alt="..."></a>
+
+                        {{!-- <a href="#!"> --}}
+                            <div class="mask">
+                                <div class="d-flex justify-content-start align-items-end h-100">
+                                    <h5><span class="badge bg-primary ms-2">New</span></h5>
+                                </div>
+                            </div>
+                            <div class="hover-overlay">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="" class="text-reset">
+                            <h5 class="card-title mb-3">{{this.brandnames.brand}} - {{this.subcategory.subcategoryName}}</h5>
+                           
+                        
+                        <h6 class="card-title">{{this.catagory.category}}</h6>
+                        
+                        </a>
+
+                        {{! <a href="" class="text-reset">
+                            <p>Category</p>
+                        </a> }}
+                        <h6 class="mb-3">&#x20b9 {{this.price}}.00</h6>
+
+                        <button onclick="addToCart('{{this._id}}')" class="btn btn-warning px-3 mx-2">Add to Cart</button>
+                        <button onclick="addToWishlist('{{this._id}}')" class="btn btn-warning px-3 mx-2">Whishlist <i class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
+           
+        </div>
+    </div>
+</section>
+
+<script>
+$(document).ready(function(){
+  $('.carousel-item:first-child').addClass('active')
+})
+</script>
+   {{!-- ajax code for page refresh --}}
+
+   
+    

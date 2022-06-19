@@ -1,0 +1,80 @@
+<section>
+    <div class="container mt-5">
+        <table class="table border rounded border-secondary">
+            <thead class="table-success">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                <tr>
+                    
+                    <td>{{this.name}}</td>
+                    <td>{{this.mobile}}</td>
+                    <td>{{this.email}}</td>
+                    <td>
+                        <div id="refresh" onClick="refreshPage()">
+
+                                    {{#if block}}
+                                    
+                                    <a onclick="unBlockUser('{{this._id}}')" class="btn btn-danger active"
+                                        role="button" data-bs-toggle="button" aria-pressed="true"><i
+                                            class="fa-solid fa-user-large-slash"></i></a>
+                                    {{else}}
+                                    <a onclick="blockUser('{{this._id}}')" class="btn btn-success" role="button"
+                                        data-bs-toggle="button"><i class="fa-solid fa-user-check"></i></a>
+                                    {{/if}}
+                        </div>
+
+                                
+
+
+                        {{!-- <a href="/admin/block-user/{{this._id}}" class="btn btn-outline-success" onclick="return confirm('Are You Sure Want to Block {{this.name}}')">Block</a> --}}
+                        <a href="/admin/delete-user/{{this._id}}" class="btn btn-outline-danger my-3" onclick="return confirm('Are You Sure Want to Delete {{this.name}}')">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script>
+
+      function refreshPage() {
+
+          window.location.reload();
+
+      } 
+
+  </script>
+
+  
+
+    <script>
+        function unBlockUser(proId) {
+            $.ajax({
+                url: '/admin/unBlockUser/' + proId,
+                method: 'get',
+                success: (response) => {
+                    if (response.status)
+                        alert(response)
+                }
+            })
+        }
+    </script>
+    <script>
+        function blockUser(proId) {
+            $.ajax({
+                url: '/admin/blockUser/' + proId,
+                method: 'get',
+                success: (response) => {
+                }
+            })
+        }
+    </script>
+    

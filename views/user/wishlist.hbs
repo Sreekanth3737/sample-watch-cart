@@ -1,0 +1,128 @@
+{{!-- <section class="h-100 gradient-custom">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0">Your WishList</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Single item -->
+                        <div class="row">
+                            {{#each wishlistProducts}}
+                            {{#each this.wishlistItems}}
+                            <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                <!-- Image -->
+                                <div class="bg-image hover-overlay hover-zoom ripple rounded"
+                                    data-mdb-ripple-color="light">
+                                    <img src="/images/{{this.product.allImages.[0]}}" class="w-100"
+                                        alt="Blue Jeans Jacket" />
+                                    <a href="#!">
+                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                    </a>
+                                </div>
+                                <!-- Image -->
+                            </div>
+
+                            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                <!-- Data -->
+                                <p class="mt-5 mb-5"><strong>{{this.product.brandnames.brand}}</strong></p>
+
+
+                                <button onclick="addToCart('{{this.product._id}}')" class="btn btn-warning">Add to
+                                    Cart</button>
+                                <a href="/delete-wishlist-product/{{this.product._id}}"
+                                    onclick="return confirm('Are you want to delete {{this.product.brandnames.brand}} From Wishlist?')">
+                                    <button type="button" class="btn btn-primary btn-sm me-1 " data-mdb-toggle="tooltip"
+                                        title="Remove item">
+                                        <i class="fas fa-trash"></i>
+                                    </button></a>
+
+
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                <!-- Quantity -->
+
+                                <!-- Quantity -->
+
+                                <!-- Price -->
+                                <p class="text-start text-md-center">
+                                    <span id="price{{this.product._id}}">&#x20b9 {{this.product.price}}.00</span>
+                                </p>
+                                <!-- Price -->
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                        </div>
+
+                        <!-- Single item -->
+
+                        <hr class="my-4" />
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section> --}}
+
+<section style="background-color: #eee;">
+    <div class="text-center container py-5">
+        <h4 class="mt-4 mb-5"><strong>Your wishList</strong></h4>
+
+        <div class="row">
+            {{#each wishlistProducts}}
+            {{#each this.wishlistItems}}
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                        data-mdb-ripple-color="light">
+                        <img src="/images/{{this.product.allImages.[0]}}" class="w-100" />
+
+                        <a href="#!">
+                            <div class="mask">
+                                <div class="d-flex justify-content-start align-items-end h-100">
+                                    <h5><span class="badge bg-primary ms-2">New</span></h5>
+                                </div>
+                            </div>
+                            <div class="hover-overlay">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="" class="text-reset">
+                            <h5 class="card-title mb-3">{{this.product.brandnames.brand}} - {{this.product.subcategory.subcategoryName}}</h5>
+                         
+                        <h6 class="card-title mb-3">{{this.product.catagory.category}}</h6>
+
+
+                        </a>
+
+                        {{! <a href="" class="text-reset">
+                            <p>Category</p>
+                        </a> }}
+                        <h6 class="mb-3">&#x20b9 {{this.product.price}}.00</h6>
+
+                        <button onclick="addToCart('{{this.product._id}}')" class="btn btn-warning px-3 mx-2">Add to Cart</button>
+                        <a href="/delete-wishlist-product/{{this.product._id}}"
+                            onclick="return confirm('Are you want to delete {{this.product.brandnames.brand}} From Wishlist?')">
+                            <button type="button" class="btn btn-primary btn-sm me-1  mx-2" data-mdb-toggle="tooltip"
+                                title="Remove item">
+                                <i class="fas fa-trash"></i>
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
+            {{/each}}
+        </div>
+    </div>
+</section>

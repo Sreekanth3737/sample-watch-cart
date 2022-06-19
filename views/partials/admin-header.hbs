@@ -1,0 +1,82 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/admin"><h2><strong>Admin Dashboard</strong></h2></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/admin/view-products">All
+              Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/view-all-orders">All Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/all-users">All Users</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/add-banners">Add Banners</a>
+          </li>
+
+          
+
+
+          <li>
+                 <div class="dropdown show">
+              <a class="btn dropdown-toggle" style="font-size: 16px;" href="#" role="button" id="dropdownMenuLink"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CATEGORY
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+               <a class="dropdown-item" href="/admin/add-brands">Add Brands</a>
+
+                <a class="dropdown-item" href="/admin/add-category">Add Category</a>
+                <a class="dropdown-item" href="/admin/add-subcategory">Add Sub Category</a>
+
+                
+              </div>
+            </div>
+             </li>
+
+
+        </ul>
+        {{! <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> }}
+
+        <div class="dropdown">
+          <button
+            class="btn btn-dark dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Admin
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+
+            <a class="dropdown-item" href="/logout">Logout</a>
+
+            {{! <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li> }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

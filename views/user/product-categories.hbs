@@ -1,0 +1,78 @@
+<nav style="margin-top:100px ;" class="navbar navbar-expand-lg navbar-dark bg-dark pb-3 pt-3 fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Categories</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#each productSubcategories}}
+        <li class="nav-item">
+          <a class="nav-link mx-3" href="/product-subcategories/{{this._id}}">{{this.subcategoryName}}</a>
+        </li>
+        
+        {{/each}}
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+
+<section style="background-color: #eee;">
+
+   
+   
+    <div style="margin-top:100px ;" class="text-center container py-5 ">
+        <h4  class="mt-4 mb-5 mt-5 "><strong>New Collections By Category</strong></h4>
+
+  
+        <div class="row">
+         
+
+            {{#each productCategories}}
+            
+            <div class="col-lg-4 col-md-12 mb-4">
+              
+
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                        data-mdb-ripple-color="light">
+                        <a href="/product-details-page/{{this._id}}"><img src="/images/{{this.allImages.[0]}}" class="card-img-top" alt="..."></a>
+
+                        {{!-- <a href="#!"> --}}
+                            <div class="mask">
+                                <div class="d-flex justify-content-start align-items-end h-100">
+                                    <h5><span class="badge bg-primary ms-2">New</span></h5>
+                                </div>
+                            </div>
+                            <div class="hover-overlay">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="" class="text-reset">
+                            <h5 class="card-title mb-3">{{this.brandnames.brand}} - {{this.subcategory.subcategoryName}}</h5>
+                           
+                        
+                        <h6 class="card-title">{{this.catagory.category}}</h6>
+                        
+                        </a>
+
+                        {{! <a href="" class="text-reset">
+                            <p>Category</p>
+                        </a> }}
+                        <h6 class="mb-3">&#x20b9 {{this.price}}.00</h6>
+
+                        <button onclick="addToCart('{{this._id}}')" class="btn btn-warning px-3 mx-2">Add to Cart</button>
+                        <button onclick="addToWishlist('{{this._id}}')" class="btn btn-warning px-3 mx-2">Whishlist <i class="fa-solid fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            {{/each}}
+           
+        </div>
+    </div>
+</section>

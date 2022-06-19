@@ -1,0 +1,57 @@
+<section>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">ADD PRODUCTS</h2>
+                <form action="/admin/add-product" method="post" enctype="multipart/form-data">
+                    <label for=""><span>Brand Name</span></label>
+                    {{!-- <input type="text" name="name" class="form-control">
+                    <br><br> --}}
+                    <select class="form-select" name="brandname" aria-label="Default select example" id="">
+                      <option selected>select Brand</option> 
+                      {{#each brands}}
+                       <option style="color: red;" value="{{this.brand}}">{{this.brand}}</option>
+                       {{/each}}
+                    </select>
+                    
+
+                    <br><br>
+                     {{!-- <input type="text" name="category" class="form-control"> --}}
+                     <select class="form-select" name="category" aria-label="Default select example">
+                        
+                         <option selected>select Category</option>
+                         {{#each category}}
+                         <option  value="{{this.category}}">{{this.category}}</option>
+                          {{/each}}  
+                     </select>  
+                    <br><br>
+
+                    <label for=""><span>Sub Category</span></label>
+                    {{!-- <input type="text" name="category" class="form-control"> --}}
+                    <select class="form-select" name="subcategory" aria-label="Default select example">
+                        
+                         <option selected>select Sub Category</option>
+                         {{#each subCat}}
+                         <option  value="{{this.subcategoryName}}">{{this.subcategoryName}}</option>
+                         {{/each}}
+                    </select>
+                    <br><br>
+                    <label for=""><span>Price</span></label>
+                    <input type="text" name="price" class="form-control" required>
+                    <br><br>
+                    <label for=""><span>Stock</span></label>
+                    <input type="text" name="stock" class="form-control" required>
+                    <br><br>
+                    <label for=""><span>Image</span></label>
+                    <input name="image"  type="file"  class="form-control" required>
+                    <br><br>
+                    <label for=""><span>Auxilary-Image</span> </label>
+                    <input name="images" type="file"  class="form-control" required>
+                    <br><br>
+                    
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,69 @@
+<section class="mt-5">
+  <div class="container-fluid px-5 mt-5">
+
+    <table id="orderTable" class="table mt-5  border rounded border-secondary">
+      <thead class="table-dark pt-5 pb-5">
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Address</th>
+          <th scope="col">City</th>
+          <th scope="col">Pincode</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Product</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Status</th>
+          <th scope="col">More options</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each adminOrders}}
+
+        <tr>
+
+          <td>{{this.date}}</td>
+
+          <td>{{this.address}}</td>
+
+
+
+          <td>{{this.city}}</td>
+          <td>{{this.pincode}}</td>
+          <td>{{this.mobile}}</td>
+          {{#each this.products}}
+          <td>{{this.brandnames.brand}}</td>
+
+          {{/each}}
+
+          <td>{{this.totalAmt}}</td>
+          <td>{{this.paymentMethod}}</td>
+          <td>{{this.status}}</td>
+          <td>
+            <a href="/admin/orderstatus-shipped/{{this._id}}" class="btn btn-warning mt-2 ">Shipped</a>
+             <a href="/admin/orderstatus-delivered/{{this._id}}" class="btn btn-primary mt-2">Delivered</a>
+
+          </td>
+           
+         
+
+
+
+        </tr>
+
+        {{/each}}
+
+      </tbody>
+
+    </table>
+  </div>
+  </div>
+</section>
+
+{{!--
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+--}}
+
+
+

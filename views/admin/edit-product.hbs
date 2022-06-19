@@ -1,0 +1,46 @@
+<section>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">EDIT PRODUCT</h2>
+                <form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
+                    <label for=""><span>Name</span></label>
+                    {{!-- <input type="text" name="name" class="form-control" value="{{product.name}}"> --}}
+
+                     <select class="form-select" name="brandname" aria-label="Default select example">
+                         <option value="{{product.brandnames.brand}}" selected>{{product.brandnames.brand}}</option>
+                         {{#each brands}}
+                         <option value="{{this.brand}}">{{this.brand}}</option>
+                         {{/each}}
+                    </select>
+                    <br><br>
+                     
+
+                    
+
+                    <label for=""><span>Price</span></label>
+                    <input type="text" name="price" class="form-control" value="{{product.price}}">
+                    <br><br>
+                    <label for=""><span>Stock</span></label>
+                    <input type="text" name="stock" class="form-control" value="{{product.stock}}" >
+                    <br><br>
+
+                    <label for=""><span>Image</span></label>
+                    <img src="/images/{{product.allImages.[0]}}" alt="" style="width:100px;height:auto">
+                    <input name="image"  type="file"  class="form-control" value="{{product.allImages.[0].maini}}">
+                    <br><br>
+
+                    <label for=""><span>Auxilary-Image</span> </label>
+                    <img src="/images/{{product.allImages.[0]}}" alt="" style="width:100px;height:auto">
+
+                    <input name="images" type="file"  class="form-control" value="{{product.allImages.[0].nexti}}">
+
+                    <br><br>
+                    
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
